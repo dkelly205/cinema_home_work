@@ -1,3 +1,5 @@
+require_relative("../db/sql_runner.rb")
+
 class Customer
 
   attr_reader :id
@@ -12,7 +14,7 @@ class Customer
   def save()
     sql = "INSERT INTO customers(name, funds) VALUES ($1, $2) RETURNING id"
     values = [@name, @funds]
-    customer = SqlRunner.run(sql, values)
+    customer = SqlRunner.run(sql, values).first
     @id = customer['id'].to_i
   end
 
