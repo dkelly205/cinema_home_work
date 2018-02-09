@@ -44,5 +44,12 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM tickets WHERE id = $1"
+    values = [id]
+    ticket = SqlRunner.run(sql, values)
+    return Ticket.new(ticket[0])
+  end
+
 
 end
