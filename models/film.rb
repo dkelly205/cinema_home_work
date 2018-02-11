@@ -56,4 +56,10 @@ class Film
     customers = SqlRunner.run(sql, values)
     return customers.map { |customer| Customer.new(customer)}
   end
+
+  def how_many_customers_are_going_to_see
+    return customers.length
+  end
+
+  
 end

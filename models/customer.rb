@@ -57,6 +57,38 @@ class Customer
     return films.map{|film| Film.new(film)}
   end
 
+  # def buy_ticket()
+  #   sum = 0
+  #   for film in films
+  #     sum += film.price.to_i
+  #   end
+  #   @funds -= sum
+  # end
+
+#   Buying tickets should decrease the funds of the customer by the price
+# Check how many tickets were bought by a customer
+# Check how many customers are going to watch a certain film
+
+  # def number_of_tickets
+  #     if buy_ticket
+  #       return films.length
+  #     else
+  #       return 0
+  #     end
+  # end
+
+  def buy_ticket(film)
+    @funds -= film.price.to_i
+  end
+
+  def number_of_tickets
+    tickets = []
+    # if buy_ticket(film)
+    #   tickets << film
+    # end
+    return tickets.count
+
+  end
 
 
 
